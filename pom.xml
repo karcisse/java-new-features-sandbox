@@ -6,7 +6,13 @@
 
     <groupId>com.itechart</groupId>
     <artifactId>java-new-features-sandbox</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>main</module>
+        <module>trusted-module</module>
+        <module>secret-module</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>9</maven.compiler.source>
@@ -22,4 +28,17 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <release>${maven.compiler.source}</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
