@@ -1,20 +1,14 @@
 package com.itechart.jdk9;
 
-import jdk.incubator.http.HttpClient;
-import jdk.incubator.http.HttpRequest;
-import jdk.incubator.http.HttpResponse;
-
-import javax.net.ssl.KeyManagerFactory;
-import javax.net.ssl.SSLContext;
 import java.io.IOException;
 import java.net.URI;
-import java.net.URISyntaxException;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
 public class HttpClientSandbox {
 
-    public String sendSimpleRequest() throws IOException, InterruptedException, NoSuchAlgorithmException, KeyManagementException {
+    public String sendSimpleRequest() throws IOException, InterruptedException {
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://api.chucknorris.io/jokes/random"))
@@ -24,7 +18,7 @@ public class HttpClientSandbox {
         HttpResponse<String> response = HttpClient
                 .newBuilder()
                 .build()
-                .send(request, HttpResponse.BodyHandler.asString());
+                .send(request, HttpResponse.BodyHandlers.ofString());
 
         return response.body();
     }

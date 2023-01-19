@@ -3,5 +3,5 @@ module com.itechart {
     requires secret.module;
     uses com.itechart.trusted.Service;
 
-    requires jdk.incubator.httpclient;
+    requires java.net.http;
 }
