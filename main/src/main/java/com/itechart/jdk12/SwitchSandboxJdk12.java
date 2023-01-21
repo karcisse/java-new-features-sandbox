@@ -1,7 +1,10 @@
 package com.itechart.jdk12;
 
-public class SwitchSandbox {
+import com.itechart.preview.SwitchSandbox;
 
+public class SwitchSandboxJdk12 implements SwitchSandbox {
+
+    @Override
     public String switchForValue(SteakWellness wellness) {
         return switch (wellness) {
             case MEDIUM_RARE, MEDIUM, MEDIUM_WELL -> "Kind of medium";
