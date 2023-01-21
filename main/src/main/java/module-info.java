@@ -4,4 +4,5 @@ module com.itechart {
     uses com.itechart.trusted.Service;
 
     requires java.net.http;
+    requires jsr305;
 }
