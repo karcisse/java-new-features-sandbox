@@ -1,4 +1,4 @@
-package com.itechart.jdk14;
+package com.itechart.records;
 
 public record Person(
         String firstName,

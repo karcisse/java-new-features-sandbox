@@ -1,6 +1,6 @@
 package jdk14;
 
-import com.itechart.jdk14.Person;
+import com.itechart.records.Person;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
